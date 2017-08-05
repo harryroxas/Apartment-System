@@ -19,7 +19,7 @@ class Overview extends Component {
 					</Menu.Item>
 				</Menu>
 				<Grid.Row>
-					<Table textAlign="center" celled>
+					<Table textAlign="center" celled unstackable>
 						<Table.Header>
 							<Table.Row>
 							<Table.HeaderCell />

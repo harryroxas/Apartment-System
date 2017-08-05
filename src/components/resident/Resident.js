@@ -1,7 +1,8 @@
 import React from 'react';
-import { Table, Icon } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 
 import DeleteResident from './DeleteResident';
+import PayBill from '../bill/PayBill';
 
 const Resident = ({residentName, deleteResident, bills}) => {
 	return(
@@ -10,10 +11,8 @@ const Resident = ({residentName, deleteResident, bills}) => {
 				<DeleteResident deleteResident={deleteResident} residentName={residentName}/>{residentName}
 			</Table.Cell>
 			{
-				bills.map((bill) => 
-					<Table.Cell textAlign="center">
-						{bill.amount}
-					</Table.Cell>
+				bills.map((bill, index) => 
+					<PayBill key={index} billType={bill.type} billAmount={bill.amount} />
 				)
 			}
 		</Table.Row>
